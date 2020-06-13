@@ -34,7 +34,7 @@ exports.execute = async(client, message, args) => {
 
         const info = await message.channel.send(loading);
 
-        console.log(info)
+
         db.set(info.id, { url: acheck, namemonit: nameurl, intervalmonit: intervala, channelid: info.channel.id })
 
 

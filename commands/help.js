@@ -43,10 +43,8 @@ exports.execute = (client, message, args) => {
             .addField("Général Commandes", ` \`\`\`css\n${generalCommands}\n\`\`\` ` + "\n", true)
             .addField("Info Commandes", ` \`\`\`css\n${infoCommands}\n\`\`\` ` + "\n", true)
             .addField("web Commandes", ` \`\`\`css\n${webCommands}\n\`\`\` ` + "\n", true)
-            //.addField("Admin Commandes", ` \`\`\`css\n${adminCommands}\n\`\`\` ` + "\n", true)
-            //.addField("Owner Commandes", ` \`\`\`fix\n${ownerCommands}\n\`\`\` ` + "\n", true);
             .addField("Informations", ` \`\`\`fix\n${infobot}\n\`\`\` ` + "\n", )
-            .addField("Credits", ` \`\`\`fix\n${creditinfo}\n\`\`\` ` + "\n", );
+            .addField("Credits", `${creditinfo}\n[Forum](https://devshare.xyz) \n[Discord](https://discord.gg/XxkVKGd) \n[Github](https://github.com/andronedev/megaweb-bot)\n<3` + "\n", );
 
 
         message.channel.send(embed);
