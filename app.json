@@ -1,0 +1,7 @@
+{
+    "name": "MegaWeb",
+    "description": "Un bot discord OpenSource de monitoring pour site web et bien plus ! ",
+    "repository": "https://github.com/andronedev/megaweb-bot",
+    "logo": "https://i.imgur.com/U2ATHeO.jpg",
+    "keywords": ["nodejs", "Discord", "Monitor"]
+}

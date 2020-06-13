@@ -1,0 +1,45 @@
+{
+    "name": "megaweb",
+    "version": "1.2.2",
+    "description": "monitor webserver - discordbot",
+    "main": "index.js",
+    "dependencies": {
+        "base64-img": "^1.0.4",
+        "chalk": "^4.0.0",
+        "chauncey": "^1.0.14",
+        "const": "^1.0.0",
+        "date.format": "^1.1.2",
+        "discord-remote-auth": "^1.0.3",
+        "discord.js": "^12.2.0",
+        "imgur": "^0.3.1",
+        "line-reader": "^0.4.0",
+        "moment": "^2.25.1",
+        "ping-lite": "^2.0.2",
+        "ping-monitor": "^0.4.4",
+        "randomstring": "^1.1.5",
+        "request": "^2.88.2"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "start": "node index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/andronedev/megaweb-bot.git"
+    },
+    "keywords": [
+        "monitor",
+        "discord",
+        "bot",
+        "web",
+        "stats",
+        "status",
+        "statuts"
+    ],
+    "author": "Andronedev",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/andronedev/megaweb-bot/issues"
+    },
+    "homepage": "https://github.com/andronedev/megaweb-bot#readme"
+}
