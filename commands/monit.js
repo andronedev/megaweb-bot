@@ -22,7 +22,7 @@ exports.execute = async(client, message, args) => {
         }
         if (args[3] && args[3] > 1) {
 
-            intervala = args[3];
+            var intervala = args[3];
 
         } else {
             intervala = 5
