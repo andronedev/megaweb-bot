@@ -44,7 +44,7 @@ exports.execute = (client, message, args) => {
             .addField("Info Commandes", ` \`\`\`css\n${infoCommands}\n\`\`\` ` + "\n", true)
             .addField("web Commandes", ` \`\`\`css\n${webCommands}\n\`\`\` ` + "\n", true)
             .addField("Informations", ` \`\`\`fix\n${infobot}\n\`\`\` ` + "\n", )
-            .addField("Credits", `${creditinfo}\n[Forum](https://devshare.xyz) \n[Discord](https://discord.gg/XxkVKGd) \n[Github](https://github.com/andronedev/megaweb-bot)\n<3` + "\n", );
+            .addField("Credits", `${creditinfo}\n[Forum](https://devshare.xyz) \n[Discord](https://discord.gg/XxkVKGd) \n[Github](https://github.com/andronedev/megaweb-bot)\n[Invitation du bot](https://discordapp.com/oauth2/authorize?client_id=721307513810714624&scope=bot&permissions=604367936)` + "\n", );
 
 
         message.channel.send(embed);
