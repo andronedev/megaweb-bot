@@ -6,10 +6,11 @@ const prefix = cfg.config.PREFIX;
 const chalk = require('chalk');
 const fs = require('fs');
 const version = "v2.0.1";
-const disapi = require("discord.js/src/util/Constants.js")
-disapi.DefaultOptions.ws.properties.$browser = `Discord iOS`
+
+const db = require('quick.db');
 
 
+const resumemonit = require(`./resumemonit`);
 ///////////////////////////////////////////////////////////////////////////////
 
 client.config = {
@@ -53,11 +54,10 @@ client.on("ready", () => {
     console.log('--> ' + (chalk.green('Prèt !')));
     console.log('______________________________________');
 
-    client.user.setActivity(`Le web ❤️ | ` + client.config.PREFIX + `help | ` + version, {
-        type: 'WATCHING',
-        browser: 'Discord iOS'
+    client.user.setActivity(`Le web ❤️ | ` + client.config.PREFIX + `help | ` + version + ` || DevShare.xyz ❤️`, {
+        type: 'WATCHING'
     });
-
+    resumemonit.execute(client)
 });
 
 ///////////////////////////////////////////////////////////////////////////////

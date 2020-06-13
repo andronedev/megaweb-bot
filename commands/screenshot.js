@@ -1,14 +1,10 @@
 var request = require('request');
-const fs = require("fs");
-const Discord = require("discord.js");
+
 var imgur = require('imgur');
-var randomstring = require("randomstring");
-var base64Img = require('base64-img');
-var lineReader = require('line-reader');
 
 exports.execute = async(client, message, args) => {
 
-        msgid = await message.channel.send("<a:8299_Loading:705914419502252103>")
+        msgid = await message.channel.send("https://media.giphy.com/media/VseXvvxwowwCc/giphy.gif")
         const url = args[1];
         console.log(url)
 
@@ -58,7 +54,7 @@ exports.execute = async(client, message, args) => {
                             "title": url,
                             "footer": {
                                 "icon_url": "",
-                                "text": "MegaWeb, Darktrojan"
+                                "text": "MegaWeb, AndroneDev"
                             },
                             "image": {
                                 "url": json.data.link
@@ -78,7 +74,7 @@ exports.execute = async(client, message, args) => {
 
             } else {
                 console.log("Erreur au niveau de la requête -- " + error)
-                msgid.edit("Une erreur est survenue..")
+                msgid.edit("> *Une erreur est survenue..*")
             }
 
         }

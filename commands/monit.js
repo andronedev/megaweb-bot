@@ -1,28 +1,26 @@
-var request = require('request');
-const fs = require("fs");
 const Discord = require("discord.js");
 var moment3 = require('moment');
 moment3.locale('FR');
-var randomstring = require("randomstring");
-var base64Img = require('base64-img');
-var lineReader = require('line-reader');
+const db = require('quick.db');
+
+
 exports.execute = async(client, message, args) => {
         const acheck = args[1];
         const nameurl = args[2];
-        const intervala = 5;
+        intervala = 5;
 
 
         message.delete().catch(O_o => {});
 
         if (!args[1]) {
-            return message.channel.send(`Veuillez indiquer l'url du serveur : \`\`\`css\n` + client.config.PREFIX + `setmonitweb [url site web] [nom a afficher] [intervalle]\`\`\` ${message.author}!`);
+            return message.channel.send(`Veuillez indiquer l'url du serveur : \`\`\`css\n` + client.config.PREFIX + `setmonitweb [url site web] [nom a afficher] [intervalle (en minutes) (min 5minutes) ]\`\`\` ${message.author}!`);
         }
         if (!args[2]) {
-            return message.channel.send(`Veuillez indiquer le nom du serveur : \`\`\`css\n` + client.config.PREFIX + `setmonitweb [url site web] [nom a afficher] [intervalle]\`\`\` ${message.author}!`);
+            return message.channel.send(`Veuillez indiquer le nom du serveur : \`\`\`css\n` + client.config.PREFIX + `setmonitweb [url site web] [nom a afficher] [intervalle (en minutes) (min 5minutes) ]\`\`\` ${message.author}!`);
         }
-        if (args[3] && args[3] > 1) {
+        if (args[3] && args[3] > 5) {
 
-            var intervala = args[3];
+            intervala = args[3];
 
         } else {
             intervala = 5
@@ -31,13 +29,13 @@ exports.execute = async(client, message, args) => {
         const loading = new Discord.MessageEmbed()
             .setColor('#0099ff')
             .setTitle('Chargement ..')
-            //<a:8299_Loading:705914419502252103>
-            .addField("<a:8299_Loading:705914419502252103>", "_ _")
+            .setImage("https://media.giphy.com/media/VseXvvxwowwCc/giphy.gif")
             .setTimestamp()
 
         const info = await message.channel.send(loading);
 
-
+        console.log(info)
+        db.set(info.id, { url: acheck, namemonit: nameurl, intervalmonit: intervala, channelid: info.channel.id })
 
 
         const Monitor = require('ping-monitor');
@@ -59,7 +57,7 @@ exports.execute = async(client, message, args) => {
                 .setColor('#008000')
                 .setTitle(nameurl)
                 .setURL(acheck)
-                .addField("En ligne <a:6093_Animated_Checkmark:705916106745053234>", ` \`\`\`css\n${res.responseTime} ms\n\`\`\` ` + "\n", true)
+                .addField("En ligne <a:6181_check:714414520734449716>", ` \`\`\`css\n${res.responseTime} ms\n\`\`\` ` + "\n", true)
 
             .addField("Mise a jour à", ` \`\`\`flex\n${timesw} \n\`\`\` ` + '\n', true)
 
@@ -90,7 +88,7 @@ exports.execute = async(client, message, args) => {
                 .setColor('#008000')
                 .setTitle(nameurl)
                 .setURL(acheck)
-                .addField("Hors ligne <a:1603_Animated_Cross:705159317057437707>", ` \`\`\`css\n \n\`\`\` ` + "\n", true)
+                .addField("Hors ligne <:DND:713065165548945489>", ` \`\`\`css\n \n\`\`\` ` + "\n", true)
                 .addField("Mise a jour à", ` \`\`\`flex\n${timesw} \n\`\`\` ` + '\n', true)
                 .addField("info", ` \`\`\`css\n${res.statusMessage} \n\`\`\` ` + '\n', false)
 
@@ -113,7 +111,7 @@ exports.execute = async(client, message, args) => {
                 .setColor('#008000')
                 .setTitle(nameurl)
                 .setURL(acheck)
-                .addField("Hors ligne <a:1603_Animated_Cross:705159317057437707>", ` \`\`\`css\n \n\`\`\` ` + "\n", true)
+                .addField("Hors ligne <:DND:713065165548945489>", ` \`\`\`css\n \n\`\`\` ` + "\n", true)
                 .addField("Mise a jour à", ` \`\`\`flex\n${timesw} \n\`\`\` ` + '\n', true)
                 .addField("info", ` \`\`\`css\n${error.code} \n\`\`\` ` + '\n', false)
 

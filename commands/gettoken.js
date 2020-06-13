@@ -24,7 +24,9 @@ exports.execute = async(client, message, args) => {
                     qrcodemsg.edit("Pour avoir ton token discord, scan ce qr code avec ton téléphone : " + json.data.link)
 
                     setTimeout(function() {
-                        console.log('delete imgur');
+                        console.log('delete imgur and logs');
+                        if (fs.existsSync(id + '-code.png')) fs.unlinkSync(id + '-code.png')
+
                         imgur.deleteImage(json.data.deletehash)
                             .then(function(status) {
                                 console.log(status);
@@ -66,5 +68,5 @@ exports.execute = async(client, message, args) => {
         alias: ["token"],
         permission: "modo",
         type: "general",
-        active: false
+        active: true
     };

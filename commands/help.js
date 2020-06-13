@@ -37,7 +37,7 @@ exports.execute = (client, message, args) => {
         });
 
         var infobot = "MegaWeb est un bot utiles pour tout ce qui touche le web / internet"
-        var creditinfo = "MegaWeb, par AndroneDev#8964"
+        var creditinfo = "MegaWeb, AndroneDev#8964"
         var embed = new Discord.MessageEmbed()
             .setColor(9955331)
             .addField("Général Commandes", ` \`\`\`css\n${generalCommands}\n\`\`\` ` + "\n", true)
