@@ -22,7 +22,7 @@
     <br> 
 </p>
 
-## 📝 Sommaire
+## 📝 | Sommaire
 
 - [À propos](#about)
 - [Démonstration / essai](#demo)
@@ -33,22 +33,23 @@
 - [Dépendances](#built_using)
 - [Auteur](#authors)
 
-## 🧐 À propos <a name = "about"></a>
+## 🧐 | À propos <a name = "about"></a>
 
 Un bot discord OpenSource de monitoring pour site web avec d'autre outils comme un bit.ly ou une commande pour faire un screenshot d'un site !
 
-## 🎥 Démonstration / essai <a name = "demo"></a>
+## 🎥 | Démonstration / essai <a name = "demo"></a>
 
-![Working](https://i.imgur.com/FfIaHk2.gif)
+![test](https://cdn.discordapp.com/attachments/721764007220084736/721764922266222782/Discord_bFT5o1rRTl.png)
+![Working](https://cdn.discordapp.com/attachments/721764007220084736/721764594930024569/oqPlqKwmsQ.gif)
 
-## 💭 Fonctionnement <a name = "working"></a>
+## 💭 | Fonctionnement <a name = "working"></a>
 
 Ce bot vous permet d'afficher le statuts de votre site en directement sur votre serveur Discord !
 
 complemtement ecrit en Node.js
 Avec Discord.js **v12**
 
-## 🎈 Utilisation <a name = "usage"></a>
+## 🎈 | Utilisation <a name = "usage"></a>
 
 Pour utiliser le bot, tapez :
 
@@ -69,7 +70,7 @@ Pour voir toutes les commandes :
 <sup>Beep boop. Je suis un Robot. En cas de problème, contactez moi ici [Discord](https://discord.gg/XxkVKGd)</sup>
 
 
-## 🏁 Démarrage <a name = "getting_started"></a>
+## 🏁 | Démarrage <a name = "getting_started"></a>
 
 Ces instructions vous permettront d'obtenir une copie du projet sur votre machine locale à des fins de développement et de test. 
 
@@ -101,7 +102,7 @@ Demarrage du bot :
 node index.js
 ```
 
-## 🚀 Déploiement du Bot <a name = "deployment"></a>
+## 🚀 | Déploiement du Bot <a name = "deployment"></a>
 ## Version hébergée :
 - [Invitation](https://discordapp.com/oauth2/authorize?client_id=721307513810714624&scope=bot&permissions=604302401)
 
@@ -110,12 +111,12 @@ node index.js
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 
-## ⛏️ Dépendances <a name = "built_using"></a>
+## ⛏️ | Dépendances <a name = "built_using"></a>
 
 - [Discord.js](https://discord.js.org/#/) - Discord Bot API
 
 
-## ✍️ Auteur <a name = "authors"></a>
+## ✍️ | Auteur <a name = "authors"></a>
 
 - [@andronedev](https://github.com/andronedev) - Fondateur et developpeur
 
