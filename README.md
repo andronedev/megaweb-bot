@@ -38,9 +38,12 @@
 Un bot discord OpenSource de monitoring pour site web avec d'autre outils comme un bit.ly ou une commande pour faire un screenshot d'un site !
 
 ## 🎥 | Démonstration / essai <a name = "demo"></a>
+<p align="center">
 
 ![test](https://cdn.discordapp.com/attachments/721764007220084736/721764922266222782/Discord_bFT5o1rRTl.png)
-![Working](https://cdn.discordapp.com/attachments/721764007220084736/721764594930024569/oqPlqKwmsQ.gif)
+![Working](https://cdn.discordapp.com/attachments/713363127990747146/721767621376213062/ezgif-3-19251e76b8cf.gif) 
+
+</p>
 
 ## 💭 | Fonctionnement <a name = "working"></a>
 
