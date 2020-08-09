@@ -7,7 +7,7 @@
 
 <div align="center">
 
-[![Discord](https://img.shields.io/discord/711647780158046269?label=Discord)
+[![Discord](https://img.shields.io/discord/740656600435654657?label=Discord)
 ![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![Platform](https://img.shields.io/badge/platform-discord-orange.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/andronedev/megaweb-bot.svg)](https://github.com/andronedev/megaweb-bot/issues)
