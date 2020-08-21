@@ -43,6 +43,13 @@ exports.execute = async(client) => {
                     interval: intervala // minutes
                 });
 
+                const loading = new Discord.MessageEmbed()
+                .setColor('#0099ff')
+                .setTitle('Chargement ..')
+                
+                .setTimestamp()
+    
+                info.edit(loading);
 
                 myMonitor.on('up', function(res, state) {
                     const timesw = moment3().format('LTS')
@@ -65,6 +72,7 @@ exports.execute = async(client) => {
                     } catch (error) {
                         console.log(error)
                         myMonitor.stop()
+                        stop(el.ID)
 
                     }
 
@@ -92,6 +100,8 @@ exports.execute = async(client) => {
                     } catch (error) {
                         console.log(error)
                         myMonitor.stop()
+                        stop(el.ID)
+
                     }
 
 
@@ -115,6 +125,8 @@ exports.execute = async(client) => {
                     } catch (error) {
                         console.log(error)
                         myMonitor.stop()
+                        stop(el.ID)
+
 
                     }
 
@@ -126,9 +138,15 @@ exports.execute = async(client) => {
             //const info = el.ID;
 
         } catch (error) {
-            db.delete(el.ID)
+            stop(el.ID)
+
         }
 
 
     });
+
+    async function stop(id){
+        db.delete(id)
+
+    }
 }

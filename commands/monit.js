@@ -5,26 +5,26 @@ const db = require('quick.db');
 
 
 exports.execute = async(client, message, args) => {
-        const acheck = args[1];
-        const nameurl = args[2];
+        const acheck = args[0];
+        const nameurl = args[1];
         intervala = 5;
 
 
         message.delete().catch(O_o => {});
 
-        if (!args[1]) {
+        if (!args[0]) {
             return message.channel.send(`Veuillez indiquer l'url du serveur : \`\`\`css\n` + client.config.PREFIX + `setmonitweb [url site web] [nom a afficher] [intervalle (en minutes) (min 5minutes) ]\`\`\` ${message.author}!`);
         }
-        if (!args[2]) {
+        if (!args[1]) {
             return message.channel.send(`Veuillez indiquer le nom du serveur : \`\`\`css\n` + client.config.PREFIX + `setmonitweb [url site web] [nom a afficher] [intervalle (en minutes) (min 5minutes) ]\`\`\` ${message.author}!`);
         }
-        if (args[3] && args[3] > 5) {
+        if (args[2] && args[2] > 5) {
 
-            intervala = args[3];
+            intervala = args[2];
 
         } else {
             intervala = 5
-            message.channel.send(`intervalle de verification (defaut): 5 minutes`);
+            message.channel.send(`Verification toutes les 5 minutes`);
         }
         const loading = new Discord.MessageEmbed()
             .setColor('#0099ff')
