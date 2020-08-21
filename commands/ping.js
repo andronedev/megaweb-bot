@@ -4,24 +4,11 @@ exports.execute = async(client, message, args) => {
 
     try {
 
-        let responseMessage = await message.channel.send({
-            embed: {
-                description: 'PINGing...'
-            }
-        });
+        let responseMessage = await message.channel.send("PINGing...");
 
-        await responseMessage.edit({
-            embed: {
-                color: Math.floor(Math.random() * 16777214) + 1,
-                fields: [{
-                    name: 'Temps de réponse',
-                    value: `\`\`\`js\n${responseMessage.createdTimestamp - message.createdTimestamp} Ms\`\`\``,
-                    inline: true
-                }]
-            }
-        });
+        await responseMessage.edit(`\`${responseMessage.createdTimestamp - message.createdTimestamp} Ms\``);
     } catch (e) {
-        client.log.error(e);
+        console.log(e);
     }
 };
 

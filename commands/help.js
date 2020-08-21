@@ -36,15 +36,15 @@ exports.execute = (client, message, args) => {
             }
         });
 
-        var infobot = "MegaWeb est un bot utiles pour tout ce qui touche le web / internet"
-        var creditinfo = "MegaWeb, AndroneDev#8964"
+        var infobot = "🤖 Un bot discord OpenSource de monitoring pour site web et bien plus !"
+        var creditinfo = "MegaWeb, AndroneDev"
         var embed = new Discord.MessageEmbed()
-            .setColor(9955331)
+            .setColor("#2f3136")
             .addField("Général Commandes", ` \`\`\`css\n${generalCommands}\n\`\`\` ` + "\n", true)
             .addField("Info Commandes", ` \`\`\`css\n${infoCommands}\n\`\`\` ` + "\n", true)
             .addField("web Commandes", ` \`\`\`css\n${webCommands}\n\`\`\` ` + "\n", true)
-            .addField("Informations", ` \`\`\`fix\n${infobot}\n\`\`\` ` + "\n", )
-            .addField("Credits", `${creditinfo}\n[Forum](https://devshare.xyz) \n[Discord](https://discord.gg/XxkVKGd) \n[Github](https://github.com/andronedev/megaweb-bot)\n[Invitation du bot](https://discordapp.com/oauth2/authorize?client_id=721307513810714624&scope=bot&permissions=604367936)` + "\n", );
+            .addField("Informations", ` \`\`\`fix\n${infobot}\n\`\`\` ` + "\n")
+            .addField("Credits", `${creditinfo}\n[Site WEB](https://megaweb.androne.dev/) \n[Discord](https://discord.gg/Xa6DDG6) \n[Github](https://github.com/andronedev/megaweb-bot)\n[Invitation du bot](https://discordapp.com/oauth2/authorize?client_id=721307513810714624&scope=bot&permissions=604367936)` + "\n", );
 
 
         message.channel.send(embed);

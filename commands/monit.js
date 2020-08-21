@@ -2,25 +2,26 @@ const Discord = require("discord.js");
 var moment3 = require('moment');
 moment3.locale('FR');
 const db = require('quick.db');
+const Monitor = require('ping-monitor');
 
 
 exports.execute = async(client, message, args) => {
-        const acheck = args[0];
-        const nameurl = args[1];
+        const acheck = args[1];
+        const nameurl = args[2];
         intervala = 5;
 
 
         message.delete().catch(O_o => {});
 
-        if (!args[0]) {
+        if (!args[2]) {
             return message.channel.send(`Veuillez indiquer l'url du serveur : \`\`\`css\n` + client.config.PREFIX + `setmonitweb [url site web] [nom a afficher] [intervalle (en minutes) (min 5minutes) ]\`\`\` ${message.author}!`);
         }
-        if (!args[1]) {
+        if (!args[2]) {
             return message.channel.send(`Veuillez indiquer le nom du serveur : \`\`\`css\n` + client.config.PREFIX + `setmonitweb [url site web] [nom a afficher] [intervalle (en minutes) (min 5minutes) ]\`\`\` ${message.author}!`);
         }
-        if (args[2] && args[2] > 5) {
+        if (args[3] && args[3] >= 5) {
 
-            intervala = args[2];
+            intervala = args[3];
 
         } else {
             intervala = 5
@@ -29,7 +30,6 @@ exports.execute = async(client, message, args) => {
         const loading = new Discord.MessageEmbed()
             .setColor('#0099ff')
             .setTitle('Chargement ..')
-            .setImage("https://media.giphy.com/media/VseXvvxwowwCc/giphy.gif")
             .setTimestamp()
 
         const info = await message.channel.send(loading);
@@ -38,7 +38,6 @@ exports.execute = async(client, message, args) => {
         db.set(info.id, { url: acheck, namemonit: nameurl, intervalmonit: intervala, channelid: info.channel.id })
 
 
-        const Monitor = require('ping-monitor');
 
 
         const myMonitor = new Monitor({
@@ -57,7 +56,7 @@ exports.execute = async(client, message, args) => {
                 .setColor('#008000')
                 .setTitle(nameurl)
                 .setURL(acheck)
-                .addField("En ligne <a:6181_check:714414520734449716>", ` \`\`\`css\n${res.responseTime} ms\n\`\`\` ` + "\n", true)
+                .addField("En ligne <:true:743036721591222284>", ` \`\`\`css\n${res.responseTime} ms\n\`\`\` ` + "\n", true)
 
             .addField("Mise a jour à", ` \`\`\`flex\n${timesw} \n\`\`\` ` + '\n', true)
 
@@ -71,6 +70,8 @@ exports.execute = async(client, message, args) => {
             } catch (error) {
                 console.log(error)
                 myMonitor.stop()
+                stop(el.ID)
+
 
             }
 
@@ -88,7 +89,7 @@ exports.execute = async(client, message, args) => {
                 .setColor('#008000')
                 .setTitle(nameurl)
                 .setURL(acheck)
-                .addField("Hors ligne <:DND:713065165548945489>", ` \`\`\`css\n \n\`\`\` ` + "\n", true)
+                .addField("Hors ligne <:false:743036722312511498>", ` \`\`\`css\n \n\`\`\` ` + "\n", true)
                 .addField("Mise a jour à", ` \`\`\`flex\n${timesw} \n\`\`\` ` + '\n', true)
                 .addField("info", ` \`\`\`css\n${res.statusMessage} \n\`\`\` ` + '\n', false)
 
@@ -98,6 +99,8 @@ exports.execute = async(client, message, args) => {
             } catch (error) {
                 console.log(error)
                 myMonitor.stop()
+                stop(el.ID)
+
             }
 
 
@@ -111,7 +114,7 @@ exports.execute = async(client, message, args) => {
                 .setColor('#008000')
                 .setTitle(nameurl)
                 .setURL(acheck)
-                .addField("Hors ligne <:DND:713065165548945489>", ` \`\`\`css\n \n\`\`\` ` + "\n", true)
+                .addField("Hors ligne <:false:743036722312511498>", ` \`\`\`css\n \n\`\`\` ` + "\n", true)
                 .addField("Mise a jour à", ` \`\`\`flex\n${timesw} \n\`\`\` ` + '\n', true)
                 .addField("info", ` \`\`\`css\n${error.code} \n\`\`\` ` + '\n', false)
 
@@ -121,11 +124,15 @@ exports.execute = async(client, message, args) => {
             } catch (error) {
                 console.log(error)
                 myMonitor.stop()
-
+                stop(el.ID)
             }
 
         });
 
+        async function stop(id){
+            db.delete(id)
+    
+        }
     },
 
 

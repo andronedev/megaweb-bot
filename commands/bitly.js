@@ -1,3 +1,5 @@
+const Discord = require('discord.js');
+
 exports.execute = async(client, message, args) => {
     if (!args.length) {
         return message.channel.send(`veuillez indiquer l'url, ${message.author} !`);
@@ -17,25 +19,9 @@ exports.execute = async(client, message, args) => {
             }
 
             console.log(result);
-
-            const embed = {
-                "url": "https://discordapp.com",
-                "color": 3553599,
-                "footer": {
-                    "icon_url": "",
-                    "text": "MegaWeb, AndroneDev#8964"
-                },
-                "fields": [{
-                        "name": "lien original",
-                        "value": "```" + url + "```"
-                    },
-                    {
-                        "name": "Lien raccourci",
-                        "value": "```" + result + "```"
-                    }
-                ]
-            };
-            message.channel.send({ embed });
+            const embed = new Discord.MessageEmbed()
+            .setDescription(`**Lien orriginal :**<${url}>\n**Lien raccourci :** <${result}>`);
+            message.channel.send(embed)
         }
     });
 

@@ -4,7 +4,7 @@ var imgur = require('imgur');
 
 exports.execute = async(client, message, args) => {
 
-        msgid = await message.channel.send("https://media.giphy.com/media/VseXvvxwowwCc/giphy.gif")
+        msgid = await message.channel.send("> Chargement...")
         const url = args[1];
         console.log(url)
 

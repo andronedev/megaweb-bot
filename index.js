@@ -5,7 +5,7 @@ const token = cfg.config.BOT_TOKEN;
 const prefix = cfg.config.PREFIX;
 const chalk = require('chalk');
 const fs = require('fs');
-const version = "v2.0.1";
+const version = "v2.0.2";
 
 const db = require('quick.db');
 
