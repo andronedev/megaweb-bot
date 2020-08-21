@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const cfg = require('./config.js');
-const token = cfg.config.BOT_TOKEN;
-const prefix = cfg.config.PREFIX;
+require('dotenv').config();
+
+const prefix =  process.env.PREFIX;
 const chalk = require('chalk');
 const fs = require('fs');
 const version = "v2.0.2";
@@ -14,9 +14,9 @@ const resumemonit = require(`./resumemonit`);
 ///////////////////////////////////////////////////////////////////////////////
 
 client.config = {
-    TOKEN: cfg.config.BOT_TOKEN,
-    OWNER_ID: cfg.config.OWNER_ID,
-    PREFIX: cfg.config.PREFIX
+    TOKEN: process.env.TOKEN,
+    OWNER_ID: process.env.OWNERID,
+    PREFIX: process.env.PREFIX
 };
 
 exports.config = () => {
@@ -41,10 +41,7 @@ fs.readdir("./commands/", function(err, files) {
 
 client.on("ready", () => {
 
-    var memberCount = client.users.size;
-    var servercount = client.guilds.size;
-    var memberNumber = client.users.size;
-    var serverNumber = client.guilds.size;
+
 
     // var servers = client.guilds.array().map(g => g.name).join(',');
 
