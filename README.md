@@ -110,7 +110,7 @@ node index.js
 - [Invitation](https://discordapp.com/oauth2/authorize?client_id=721307513810714624&scope=bot&permissions=604302401)
 
 ---
-**NOTE** : Pour des raisons de sécurité, il faut utiliser un .env le token de votre bot, je ferais une mise à jour dans le futur
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 
