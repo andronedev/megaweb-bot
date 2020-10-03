@@ -8,7 +8,7 @@
         "chauncey": "^1.0.14",
         "date.format": "^1.1.2",
         "discord-remote-auth": "^1.0.3",
-        "discord.js": "^12.2.0",
+        "discord.js": "^12.3.1",
         "dotenv": "^8.2.0",
         "imgur": "^0.3.1",
         "line-reader": "^0.4.0",
