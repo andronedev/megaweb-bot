@@ -12,7 +12,7 @@
         "dotenv": "^8.2.0",
         "imgur": "^0.3.1",
         "line-reader": "^0.4.0",
-        "moment": "^2.25.1",
+        "moment": "^2.27.0",
         "ping-monitor": "^0.4.4",
         "quick.db": "^7.1.2",
         "randomstring": "^1.1.5",
