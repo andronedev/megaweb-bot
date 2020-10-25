@@ -7,8 +7,8 @@
 
 <div align="center">
 
-[![Discord](https://img.shields.io/discord/740656600435654657?label=Discord)
-![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![Discord](https://img.shields.io/discord/740656600435654657?label=Discord)](https://discord.androne.dev)
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
 [![Platform](https://img.shields.io/badge/platform-discord-orange.svg)]()
 [![GitHub Issues](https://img.shields.io/github/issues/andronedev/megaweb-bot.svg)](https://github.com/andronedev/megaweb-bot/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/andronedev/megaweb-bot.svg)](https://github.com/andronedev/megaweb-bot/pulls)
@@ -70,7 +70,7 @@ Pour voir toutes les commandes :
 
 ---
 
-<sup>Beep boop. Je suis un Robot. En cas de problème, contactez moi ici [Discord](https://discord.gg/XxkVKGd)</sup>
+<sup>Beep boop. Je suis un Robot. En cas de problème, contactez moi ici [Discord](https://discord.androne.dev)</sup>
 
 
 ## 🏁 | Démarrage <a name = "getting_started"></a>
