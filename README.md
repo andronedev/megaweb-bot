@@ -45,6 +45,9 @@ Un bot discord OpenSource de monitoring pour site web avec d'autre outils comme 
 
 </p>
 
+## Version hébergée :
+- [Invitation](https://discord.com/api/oauth2/authorize?client_id=721307513810714624&permissions=8&scope=bot) (Merci Twistky#7956)
+
 ## 💭 | Fonctionnement <a name = "working"></a>
 
 Ce bot vous permet d'afficher le statuts de votre site en directement sur votre serveur Discord !
@@ -107,7 +110,7 @@ node index.js
 
 ## 🚀 | Déploiement du Bot <a name = "deployment"></a>
 ## Version hébergée :
-- [Invitation](https://discordapp.com/oauth2/authorize?client_id=721307513810714624&scope=bot&permissions=604302401)
+- [Invitation](https://discord.com/api/oauth2/authorize?client_id=721307513810714624&permissions=8&scope=bot)
 
 ---
 
