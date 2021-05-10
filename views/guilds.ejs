@@ -1,0 +1,7 @@
+<body>
+<% guilds.forEach((guild) => { %>
+    <form action="/guilds/<%= guild.id %>">
+        <button type="submit"><%= guild.name %></button>
+    </form>
+<%})%>
+</body>
