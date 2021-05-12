@@ -14,19 +14,22 @@ client.on("newUser", (user) =>
   console.log(`${user.username} just logged into the dashboard`)
 );
 client.on("message", (message) => {
-  if (message.content.startsWith("!help")) message.reply(client.config.dashboard.publicurl);
+  if (message.content.startsWith("!help"))
+    message.reply(client.config.dashboard.publicurl);
 });
 
-const clientdb = new MongoClient(client.config.mongodb.url, {
+var mongoClient = new MongoClient(client.config.mongodb.url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-clientdb.connect((err) => {
-  if (err) {
-    console.log(err);
-  }
-
-  console.log("Connected successfully to server");
-  client.db = clientdb.db(client.config.mongodb.dbname);
-  client.login(client.config.client.token);
-});
+try {
+  mongoClient.connect(async function (err, mongoClient) {
+    console.log("Connected successfully to server");
+    client.db = await mongoClient.db(client.config.mongodb.dbname);
+    client.login(client.config.client.token);
+  });
+} catch (err) {
+  log("ERROR while connecting to database");
+  console.log(err);
+  mongoClient.close();
+}
