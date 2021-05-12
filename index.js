@@ -1,14 +1,29 @@
-const { Client } = require('discord.js');
-const Dashboard = require('./src/router');
-
+const { resumemonits } = require('./bot/monit');
+const { Client } = require("discord.js");
+const Dashboard = require("./src/router");
 const client = new Client();
-client.config = require('./config');
+client.config = require("./config");
 
-client.on('ready', () => client.dashboard = new Dashboard(client));
-client.on('newUser', (user) => console.log(`${user.username} just logged into the dashboard`));
+const MongoClient = require("mongodb").MongoClient;
 
-client.on('message', message => {
-    if (message.content.startsWith('!ping')) message.reply('Pong !');
+client.on("ready", () => {
+  client.dashboard = new Dashboard(client)
+  resumemonits(client)
+});
+client.on("newUser", (user) =>
+  console.log(`${user.username} just logged into the dashboard`)
+);
+client.on("message", (message) => {
+  if (message.content.startsWith("!ping")) message.reply("Pong !");
 });
 
-client.login(client.config.client.token);
+MongoClient.connect(
+  client.config.mongodb.url,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  function (err, clientdb) {
+    console.log("Connected successfully to server");
+    client.db = clientdb.db(client.config.mongodb.dbname);
+
+    client.login(client.config.client.token);
+  }
+);
