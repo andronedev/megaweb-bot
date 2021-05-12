@@ -44,16 +44,24 @@ module.exports.Router = class Routes extends (
         a.name.localeCompare(b.name)
       );
 
-      const theguild = req.params.id
-        ? getguild(req.user.guilds, req.params.id) || null
-        : getguild([guilds[0]], guilds[0].id);
-       
+      var theguild = req.params.id
+        ? getguild(req.user.guilds, req.params.id)
+        : false;
+      if (!theguild) {
+        for (var i = 0; i < guilds.length; i++) {
+          if (check(guilds[i].id)) {
+            theguild = guilds[i];
+            break;
+          }
+        }
+      }
 
       return res.render("dashboard.ejs", {
         user: req.user.me,
         guilds: guilds,
         guild: theguild,
-        currentid: req.params.id || guilds[0].id,});
+        currentid: theguild.id || "",
+      });
     });
   }
 };
