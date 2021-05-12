@@ -22,6 +22,10 @@ const clientdb = new MongoClient(client.config.mongodb.url, {
   useUnifiedTopology: true,
 });
 clientdb.connect((err) => {
+  if (err) {
+    console.log(err);
+  }
+
   console.log("Connected successfully to server");
   client.db = clientdb.db(client.config.mongodb.dbname);
   client.login(client.config.client.token);
