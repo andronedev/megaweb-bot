@@ -3,7 +3,7 @@
   <nav class="navbar is-white">
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item brand-text" href="../index.html"> MegaWeb </a>
+        <a class="navbar-item brand-text" href="/"> MegaWeb </a>
         <div class="navbar-burger burger" data-target="navMenu">
           <span></span>
           <span></span>
@@ -81,7 +81,8 @@
                     <p class="card-header-title">Mes moniteurs</p>
                     <a href="#" class="card-header-icon" aria-label="more options">
                       <span class="icon">
-                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        <button @click="getmonits()" class="button is-info"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                        
                       </span>
                     </a>
                   </header>
@@ -90,9 +91,9 @@
                       <div class="card">
                         <tr class="home">
 
-
                           <div class="table-container">
                             <table class="table">
+                              
                               <thead>
                                 <tr>
                                   <th><abbr title="Nom">Nom</abbr></th>
@@ -161,6 +162,9 @@
                       <input required id="interval" class="input" type="number"
                         placeholder="Interval de mise a jour (en minutes)" min="5">
                       <button @click="addmonit()" class="button is-primary is-fullwidth mt-1">Ajouter</button>
+                      <div v-show="success" class="notification is-primary mt-1">
+                        Le moniteur a été ajouté avec succès !
+                    </div>
                     </div>
                   </div>
                 </div>
@@ -176,10 +180,12 @@
               el: '#app',
               data: {
                 monits: [],
-                guildid: "<%= guild.id %>"
+                guildid: "<%= guild.id %>",
+                success :false
               },
               methods: {
                 addmonit() {
+                  this.success=false
                   fetch("/addmonit", {
                     "headers": {
                       "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
@@ -193,7 +199,10 @@
                     "credentials": "include"
                   }).then(rep => rep.json()).then(json => {
                     if (json.success) {
+                      this.success=true
                       this.getmonits()
+ 
+                      
                     }
                   })
                 },
