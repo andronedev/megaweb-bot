@@ -21,6 +21,8 @@ client.on("message", (message) => {
 var mongoClient = new MongoClient(client.config.mongodb.url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  connectTimeoutMS: 30000,
+  keepAlive: 1,
 });
 try {
   mongoClient.connect(function (err, mongoClient) {
