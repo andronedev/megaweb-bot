@@ -25,7 +25,7 @@ var mongoClient = new MongoClient(client.config.mongodb.url, {
   keepAlive: 1,
 });
 try {
-  mongoClient.connect(function (err, mongoClient) {
+  mongoClient.connect(err=> {
     console.log("Connected successfully to server");
     client.db = mongoClient.db(client.config.mongodb.dbname);
     client.login(client.config.client.token);
