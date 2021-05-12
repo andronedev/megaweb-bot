@@ -1,4 +1,3 @@
-notes.md
-MEGAWEB.code-workspace
 node_modules
-.env
+package-lock.json
+config.js
