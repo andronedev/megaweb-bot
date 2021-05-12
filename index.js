@@ -23,9 +23,9 @@ var mongoClient = new MongoClient(client.config.mongodb.url, {
   useUnifiedTopology: true,
 });
 try {
-  mongoClient.connect(async function (err, mongoClient) {
+  mongoClient.connect(function (err, mongoClient) {
     console.log("Connected successfully to server");
-    client.db = await mongoClient.db(client.config.mongodb.dbname);
+    client.db = mongoClient.db(client.config.mongodb.dbname);
     client.login(client.config.client.token);
   });
 } catch (err) {
