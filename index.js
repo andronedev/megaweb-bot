@@ -14,7 +14,7 @@ client.on("newUser", (user) =>
   console.log(`${user.username} just logged into the dashboard`)
 );
 client.on("message", (message) => {
-  if (message.content.startsWith("!ping")) message.reply("Pong !");
+  if (message.content.startsWith("!help")) message.reply(client.config.dashboard.publicurl);
 });
 
 const clientdb = new MongoClient(client.config.mongodb.url, {

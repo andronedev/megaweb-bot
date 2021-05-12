@@ -5,6 +5,7 @@ module.exports = {
 
     dashboard: {
         url: 'http://localhost',
+        publicurl:"http://localhost:3000",
         port: 3000,
         secret: 'secret of the app discord',
     },
