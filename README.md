@@ -18,8 +18,7 @@
 
 ---
 
-<p align="center"> 🤖 Un bot discord OpenSource de monitoring pour site web et bien plus !
-    <br> 
+<p align="center"> 🤖 Megaweb permet d'afficher le statut de votre site web directement sur votre Discord
 </p>
 
 ## 📝 | Sommaire
@@ -35,45 +34,27 @@
 
 ## 🧐 | À propos <a name = "about"></a>
 
-Un bot discord OpenSource de monitoring pour site web avec d'autre outils comme un bit.ly ou une commande pour faire un screenshot d'un site !
+Megaweb permet d'afficher le statut de votre site web directement sur votre Discord
 
 ## 🎥 | Démonstration / essai <a name = "demo"></a>
 <p align="center">
 
-![test](https://cdn.discordapp.com/attachments/721764007220084736/721764922266222782/Discord_bFT5o1rRTl.png)
-![Working](https://cdn.discordapp.com/attachments/713363127990747146/721767621376213062/ezgif-3-19251e76b8cf.gif) 
+![test](https://cdn.discordapp.com/attachments/772517428005568543/842016350402641920/megawebv2.png)) 
 
 </p>
 
 ## Version hébergée :
-- [Invitation](https://discord.com/api/oauth2/authorize?client_id=721307513810714624&permissions=8&scope=bot) (Merci Twistky#7956)
+- [Dashboard](http://176.9.172.195:25594/) (Merci Twistky#7956 pour l'hebergement)
 
 ## 💭 | Fonctionnement <a name = "working"></a>
 
 Ce bot vous permet d'afficher le statuts de votre site en directement sur votre serveur Discord !
-
-complemtement ecrit en Node.js
+Ecrit en Node.js
 Avec Discord.js **v12**
 
 ## 🎈 | Utilisation <a name = "usage"></a>
 
-Pour utiliser le bot, tapez :
-
-```
-[prefix]setmonitweb URL Name
-```
-
-Pour voir toutes les commandes : 
-```
-[prefix]help
-```
-### Exemple:
-
-> ==setmonitweb https://devshare.xyz Dev'Share
-
----
-
-<sup>Beep boop. Je suis un Robot. En cas de problème, contactez moi ici [Discord](https://discord.androne.dev)</sup>
+Rendez vous sur le dashboard
 
 
 ## 🏁 | Démarrage <a name = "getting_started"></a>
@@ -110,7 +91,8 @@ node index.js
 
 ## 🚀 | Déploiement du Bot <a name = "deployment"></a>
 ## Version hébergée :
-- [Invitation](https://discord.com/api/oauth2/authorize?client_id=721307513810714624&permissions=8&scope=bot)
+
+- [Dashboard](http://176.9.172.195:25594/) (Merci Twistky#7956 pour l'hebergement)
 
 ---
 
