@@ -46,7 +46,7 @@ module.exports.Router = class Routes extends (
 
       var theguild = req.params.id
         ? getguild(req.user.guilds, req.params.id)
-        : false;
+        : null;
       if (!theguild) {
         for (var i = 0; i < guilds.length; i++) {
           if (check(guilds[i].id)) {
