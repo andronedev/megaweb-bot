@@ -9,9 +9,17 @@ module.exports.Router = class Routes extends (
     this.get("/:id?", async function (req, res) {
       if (!req.user) return res.redirect("/login");
       function getguild(guilds, id) {
+        /*
+        * Recupere le serveur avec l'id mais si il n'y a pas d'id il prendre le premier qui rempli les critères
+        * Attention : retourne null si rien est n'est ok 
+        */
+        if (!id) id = true;
         var g = null;
         for (var i = 0; i < guilds.length; i++) {
-          if (guilds[i].id == id && (guilds[i].permissions & 0x8) == 0x8) {
+          if (
+            guilds[i].id == id ||
+            (id == true && (guilds[i].permissions & 0x8) == 0x8)
+          ) {
             guilds[i].botin = check(guilds[i].id);
             if (guilds[i].botin) {
               const server = req.client.guilds.cache.get(guilds[i].id);
@@ -44,22 +52,12 @@ module.exports.Router = class Routes extends (
         a.name.localeCompare(b.name)
       );
 
-      var theguild = req.params.id
-        ? getguild(req.user.guilds, req.params.id)
-        : null;
-      if (!theguild) {
-        for (var i = 0; i < guilds.length; i++) {
-          if (guilds[i].botin) {
-            theguild = guilds[i]
-            break;
-          }
-        }
-      }
+      var theguild = getguild(req.user.guilds, req.params.id);
       return res.render("dashboard.ejs", {
         user: req.user.me,
         guilds: guilds,
         guild: theguild,
-        currentid: theguild.id || "",
+        currentid: theguild ? theguild.id || "" : null,
       });
     });
   }
