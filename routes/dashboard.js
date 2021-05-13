@@ -49,13 +49,12 @@ module.exports.Router = class Routes extends (
         : null;
       if (!theguild) {
         for (var i = 0; i < guilds.length; i++) {
-          if (check(guilds[i].id)) {
-            theguild = guilds[i];
+          if (guilds[i].botin) {
+            theguild = guilds[i]
             break;
           }
         }
       }
-
       return res.render("dashboard.ejs", {
         user: req.user.me,
         guilds: guilds,
