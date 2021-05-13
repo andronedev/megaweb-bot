@@ -91,7 +91,7 @@
                                                             <tr>
                                                                 <th><abbr title="Nom">Nom</abbr></th>
                                                                 <th><abbr title="URL">URL</abbr></th>
-                                                                <th><abbr title="Interval">Interval</abbr></th>
+                                                                <th><abbr title="Interval">Intervalle</abbr></th>
                                                                 <th><abbr title="link">Lien</abbr></th>
                                                                 <th><abbr title="Actions">Actions</abbr></th>
 
@@ -159,7 +159,7 @@
                                         <hr>
                                         <input required id="name" class="input" type="text" placeholder="Nom">
                                         <input required id="url" class="input" type="url" placeholder="URL du site à surveiller">
-                                        <input required id="interval" class="input" type="number" placeholder="Interval de mise a jour (en minutes)" min="5">
+                                        <input required id="interval" class="input" type="number" placeholder="Intervalle de mise a jour (en minutes)" min="5">
                                         <button @click="addmonit()" class="button is-primary is-fullwidth mt-1">Ajouter</button>
                                         <div v-show="success" class="notification is-primary mt-1">
                                             Le moniteur a été ajouté avec succès !
