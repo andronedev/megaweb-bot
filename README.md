@@ -39,8 +39,8 @@ Megaweb permet d'afficher le statut de votre site web directement sur votre Disc
 ## 🎥 | Démonstration / essai <a name = "demo"></a>
 <p align="center">
 
-![test](https://cdn.discordapp.com/attachments/772517428005568543/842016350402641920/megawebv2.png)) 
-
+![embed](https://cdn.discordapp.com/attachments/772517428005568543/842016350402641920/megawebv2.png)
+![Dashboard](https://cdn.discordapp.com/attachments/772517428005568543/842331824810360872/unknown.png)
 </p>
 
 ## Version hébergée :
