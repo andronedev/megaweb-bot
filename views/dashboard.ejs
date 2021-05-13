@@ -64,7 +64,7 @@
                     </div>
                 </div>
             </section>
-            <% if(guild){ %>
+            <% if(guild != null){ %>
                 <div id="app">
                     <div class="columns mt-1">
 
@@ -141,11 +141,18 @@
                                         <option>
                                             Selectionner un salon
                                         </option>
+                                        <% if(guild.channels){ %>
+                                           
                                         <% guild.channels.forEach((channel)=> { %>
                                             <option value="<%= channel.id %>">
                                             <%= channel.name %>
                                             </option>
                                             <%})%>
+                                        <% } else { %>
+                                            <option>
+                                                Aucun salon disponible
+                                            </option>
+                                        <% } %>
                                         </select>
                                         </div>
 
