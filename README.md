@@ -44,7 +44,7 @@ Megaweb permet d'afficher le statut de votre site web directement sur votre Disc
 </p>
 
 ## Version hébergée :
-- [Dashboard](http://176.9.172.195:25594/) (Merci Twistky#7956 pour l'hebergement)
+- [Dashboard](https://megaweb.androne.dev/)
 
 ## 💭 | Fonctionnement <a name = "working"></a>
 
@@ -92,7 +92,7 @@ node index.js
 ## 🚀 | Déploiement du Bot <a name = "deployment"></a>
 ## Version hébergée :
 
-- [Dashboard](http://176.9.172.195:25594/) (Merci Twistky#7956 pour l'hebergement)
+- [Dashboard](https://megaweb.androne.dev/)
 
 ---
 
